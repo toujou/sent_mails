@@ -15,7 +15,7 @@ use TYPO3\CMS\Core\Utility\ArrayUtility;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\StringUtility;
 
-class BeforeMailSentEventListener  implements LoggerAwareInterface
+class BeforeMailSentEventListener implements LoggerAwareInterface
 {
     use LoggerAwareTrait;
 
