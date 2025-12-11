@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace StudioMitte\SentMails\Repository;
 
+use Doctrine\DBAL\ArrayParameterType;
 use StudioMitte\SentMails\Configuration;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Core\Database\Connection;
@@ -82,8 +83,8 @@ class MailRepository
         $this->createQueryBuilder()
             ->delete(self::TABLE_NAME)
             ->where('uid IN(:uids)')
-            ->setParameter('uids', $mailUids, Connection::PARAM_INT_ARRAY)
-            ->execute();
+            ->setParameter('uids', $mailUids, ArrayParameterType::INTEGER)
+            ->executeQuery();
     }
 
     private function createQueryBuilder(): QueryBuilder
